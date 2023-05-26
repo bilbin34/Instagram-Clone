@@ -1,0 +1,104 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{% static '/images/instagram.ico' %}">
+    <link rel="stylesheet" href="{% static 'css/registration.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Sign up • Instagram</title>
+</head>
+<body>
+
+    <section class="top_section">
+    
+        <div class=" right_side">
+    
+            <div class="panel login">
+                <a href="/"><img class="logo" src="{%static '/images/instagram-logo.png'%}" alt="Logo"></a>
+
+            <div class="paneltext" >
+                <h3>Sign up to see photos and videos from your friends.</h3>
+            </div>
+            
+            <div class="fb_login">
+                <a href="#"><button class="button">
+                    <i class="fa-brands fa-square-facebook" style="color: #fff;"></i>
+                    Log In with Facebook
+                </button></a>
+            </div>
+                
+            <div class="divider">
+                <div class="line"></div>
+                    <p>OR</p>
+                <div class="line"></div>
+            </div>
+            
+            <form method="post">
+                {% csrf_token %}
+                <input class="inputbox" type="email" placeholder="E-mail" name="email"><br>
+                <input class="inputbox" type="text" placeholder="Username" name="username"><br>
+                <input class="inputbox" type="password" placeholder="Password" name="password"><br>
+
+                <h4>People who use our service may have uploaded your contact information to Instagram. Learn More</h4><br>
+                <h6>By signing up, you agree to our Terms , Privacy Policy and Cookies Policy .</h6>
+                
+                <button class="button" type="submit">Sign up</button>
+            </form>
+            
+            <div class="panelmessage">
+                {% for i in messages %}           
+                <h5  >{{i}}</h5>  
+                {% endfor %}
+            </div>   
+           
+        </div>
+
+
+    
+        <div class="panel signup">
+            <P>Have an account?</P>
+            <a href="/login">Log in</a>
+        </div>
+    
+        <div class="panel apps">
+            <p>Get the app.</p>
+    
+            <div class="app-store">
+                <a href="https://play.google.com/store/apps/details?id=com.instagram.android&referrer=utm_source%3Dinstagramweb%26utm_campaign%3DloginPage%26ig_mid%3DE840B422-79BE-47BE-80C0-CF296AAFA778%26utm_content%3Dlo%26utm_medium%3Dbadge&pli=1"><img class="app_store_img1" src="{%static '/images/googlePlay.png'%}" alt="Playstore"></a>
+                <a href="ms-windows-store://pdp/?productid=9nblggh5l9xt&amp;referrer=appbadge&amp;source=www.instagram.com&amp;mode=mini&amp;pos=0%2C0%2C1080%2C2340"><img class="app_store_img2" src="{%static '/images/microsoft.png'%}" alt="Microsoft Store"></a>     
+            </div>
+    
+        </div>
+        
+    </section>
+    
+    <footer>
+    
+        <ul>
+            <a href="#">Meta</a>
+            <a href="#">About</a>
+            <a href="#">Blog</a>
+            <a href="#">Jobs</a>
+            <a href="#">Help</a>
+            <a href="#">API</a>
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+            <a href="#">Top Accounts</a>
+            <a href="#">Locations</a>
+            <a href="#">Instagram Lite</a>
+            <a href="#">Contact Uploading & Non-Useres</a>
+        </ul>
+    
+        <ul class="last_footer">
+            <li>English</li>
+            <li>&copy; 2023 Instagram from Meta</li>     
+        </ul>
+    
+    </footer>
+
+</body>
+</html>

