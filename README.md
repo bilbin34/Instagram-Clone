@@ -1,2 +1,2 @@
 # Instagram-Clone
-Django Project
+Instagram clone project
